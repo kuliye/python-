@@ -10,7 +10,6 @@ class RedisHelper:
 
 redish=RedisHelper()
 
-mysqlh.show()
 print('输入你想要添加的信息')
 name=input('名字：')
 price=input('价格：')
