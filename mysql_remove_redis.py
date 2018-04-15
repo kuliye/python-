@@ -19,18 +19,14 @@ class RedisHelper:
     def hset(self,hash,key,value):
         """设置值"""
         self.redis.hset(hash,key,value)
-        
-mysqlh=mysqlHelper()
-redish=RedisHelper()
+   
 
+if __name__ == '__main__':
+    mysqlh=mysqlHelper()
+    redish=RedisHelper()
 
-temp=mysqlh.get_menber()
-for good in temp:
-    name=good[1]
-    price=good[2]
-    sorted=good[3]
-    redish.hset(name,'name',name)
-    redish.hset(name,'price',price)
-    redish.hset(name,'sorted',sorted)
+    temp=mysqlh.get_menber()
+    for info in temp:
+        redish.hset('good',info[1],info)
     
 #目的是将mysql中的数据信息转存入redis，以hash存储
