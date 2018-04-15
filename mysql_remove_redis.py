@@ -32,3 +32,4 @@ for good in temp:
     redish.hset(name,'name',name)
     redish.hset(name,'price',price)
     redish.hset(name,'sorted',sorted)
+#目的是将mysql中的代码存入redis，以hash存储
